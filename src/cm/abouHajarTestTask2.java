@@ -94,7 +94,6 @@ public class abouHajarTestTask2 {
     public void testCase5() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
-        BigDecimal normalRate = null;
         BigDecimal reducedRate = new BigDecimal(4);
         // reducedPeriods
         ArrayList<Period> reducedPeriods = new ArrayList<Period>();
@@ -106,7 +105,7 @@ public class abouHajarTestTask2 {
         normalPeriods.add(np);
         // Car Park
         CarParkKind park = CarParkKind.STUDENT;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        rate = new Rate(park, null, reducedRate, reducedPeriods, normalPeriods);
     }
 
     //Rate  Test Case #6
@@ -115,7 +114,7 @@ public class abouHajarTestTask2 {
         Rate rate ;
         // normalRate && reducedRate
         BigDecimal normalRate = new BigDecimal(4);
-        BigDecimal reducedRate = null;
+
         // reducedPeriods
         ArrayList<Period> reducedPeriods = new ArrayList<Period>();
         Period reduceP = new Period(10,12);
@@ -126,7 +125,7 @@ public class abouHajarTestTask2 {
         normalPeriods.add(np);
         // Car Park
         CarParkKind park = CarParkKind.MANAGEMENT;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        rate = new Rate(park, normalRate, null, reducedPeriods, normalPeriods);
     }
 
 
@@ -170,45 +169,8 @@ public class abouHajarTestTask2 {
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
     }
 
-    //Rate  Test Case #9
-    @org.junit.Test(expected = IllegalArgumentException.class)
-    public void testCase9() throws IllegalArgumentException {
-        Rate rate ;
-        // normalRate && reducedRate
-        BigDecimal normalRate = new BigDecimal("[55]");
-        BigDecimal reducedRate = new BigDecimal(1);
-        // reducedPeriods
-        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-        Period reduceP = new Period(10,12);
-        reducedPeriods.add(reduceP);
-        // normalPeriods
-        ArrayList<Period> normalPeriods = new ArrayList<Period>();
-        Period np = new Period(7,10);
-        normalPeriods.add(np);
-        // Car Park
-        CarParkKind park = CarParkKind.MANAGEMENT;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-    }
 
-    //Rate  Test Case #10
-    @org.junit.Test(expected = IllegalArgumentException.class)
-    public void testCase10() throws IllegalArgumentException {
-        Rate rate ;
-        // normalRate && reducedRate
-        BigDecimal normalRate = new BigDecimal("hi");
-        BigDecimal reducedRate = new BigDecimal(1);
-        // reducedPeriods
-        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-        Period reduceP = new Period(10,12);
-        reducedPeriods.add(reduceP);
-        // normalPeriods
-        ArrayList<Period> normalPeriods = new ArrayList<Period>();
-        Period np = new Period(7,10);
-        normalPeriods.add(np);
-        // Car Park
-        CarParkKind park = CarParkKind.MANAGEMENT;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-    }
+
 
 
     //Rate  Test Case #11
@@ -248,10 +210,8 @@ public class abouHajarTestTask2 {
         ArrayList<Period> normalPeriods = new ArrayList<Period>();
         Period np = new Period(10,12);
         normalPeriods.add(np);
-        Period np2 = new Period(11,1);
-        normalPeriods.add(np2);
         // Car Park
-        CarParkKind park = CarParkKind.VISITOR;
+        CarParkKind park = CarParkKind.MANAGEMENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
     }
 
@@ -273,8 +233,6 @@ public class abouHajarTestTask2 {
         ArrayList<Period> normalPeriods = new ArrayList<Period>();
         Period np = new Period(10,12);
         normalPeriods.add(np);
-        Period np2 = new Period(11,1);
-        normalPeriods.add(np2);
         // Car Park
         CarParkKind park = CarParkKind.VISITOR;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
@@ -286,21 +244,38 @@ public class abouHajarTestTask2 {
         // normalRate && reducedRate
         BigDecimal normalRate = new BigDecimal(10);
         BigDecimal reducedRate = new BigDecimal(8);
-        // reducedPeriods
-        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-        Period reduceP = null;
-        reducedPeriods.add(reduceP);
-        Period reduceP2 = new Period(17,21);
-        reducedPeriods.add(reduceP2);
         // normalPeriods
         ArrayList<Period> normalPeriods = new ArrayList<Period>();
         Period np = new Period(10,12);
         normalPeriods.add(np);
-        Period np2 = new Period(11,1);
+
+
+
+        // Car Park
+        CarParkKind park = CarParkKind.VISITOR;
+        rate = new Rate(park, normalRate, reducedRate, null, normalPeriods);
+    }
+
+
+    @org.junit.Test(expected = IllegalArgumentException.class)
+    public void testCase14II() throws IllegalArgumentException {
+        Rate rate ;
+        // normalRate && reducedRate
+        BigDecimal normalRate = new BigDecimal(10);
+        BigDecimal reducedRate = new BigDecimal(8);
+        // normalPeriods
+        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+        // normalPeriods
+        ArrayList<Period> normalPeriods = new ArrayList<Period>();
+        Period np = new Period(10,13);
+        normalPeriods.add(np);
+        Period np1 = new Period(11,15);
+        normalPeriods.add(np1);
+        Period np2 = new Period(13,20);
         normalPeriods.add(np2);
         // Car Park
         CarParkKind park = CarParkKind.VISITOR;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        rate = new Rate(park, normalRate, reducedRate,reducedPeriods , normalPeriods);
     }
     // Rate  test case 15
     @org.junit.Test(expected = IllegalArgumentException.class)
@@ -316,14 +291,10 @@ public class abouHajarTestTask2 {
         Period reduceP2 = null;
         reducedPeriods.add(reduceP2);
         // normalPeriods
-        ArrayList<Period> normalPeriods = new ArrayList<Period>();
-        Period np = new Period(10,12);
-        normalPeriods.add(np);
-        Period np2 = new Period(11,1);
-        normalPeriods.add(np2);
+
         // Car Park
         CarParkKind park = CarParkKind.VISITOR;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, null);
     }
 
 
