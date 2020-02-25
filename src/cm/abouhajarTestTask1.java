@@ -1,14 +1,16 @@
 package cm;
 
 import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-public class abouHajarTestTask1 {
+public class abouhajarTestTask1 {
     // Rate Test Case #1
-    @Test
+    @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase1() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -28,7 +30,7 @@ public class abouHajarTestTask1 {
     }
 
     //Rate  Test Case #2
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase2() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -49,7 +51,7 @@ public class abouHajarTestTask1 {
 
 
     //Rate  Test Case #3
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase3() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -70,7 +72,7 @@ public class abouHajarTestTask1 {
 
 
     //Rate  Test Case #4
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase4() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -91,7 +93,7 @@ public class abouHajarTestTask1 {
 
 
     // Rate Test Case #5
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase5() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -111,7 +113,7 @@ public class abouHajarTestTask1 {
     }
 
     //Rate  Test Case #6
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase6() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -132,7 +134,7 @@ public class abouHajarTestTask1 {
 
 
     // Rate Test Case #7
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase7() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -152,7 +154,7 @@ public class abouHajarTestTask1 {
     }
 
     // Rate Test Case #8
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase8() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -172,7 +174,7 @@ public class abouHajarTestTask1 {
     }
 
     //Rate  Test Case #9
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase9() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -192,7 +194,7 @@ public class abouHajarTestTask1 {
     }
 
     //Rate  Test Case #10
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase10() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -213,7 +215,7 @@ public class abouHajarTestTask1 {
 
 
     //Rate  Test Case #11
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase11() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -235,7 +237,7 @@ public class abouHajarTestTask1 {
     }
 
     // Rate Test Case #12
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase12() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -258,7 +260,7 @@ public class abouHajarTestTask1 {
 
 
     //Rate  Test Case #13
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase13() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -281,7 +283,7 @@ public class abouHajarTestTask1 {
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
     }
 
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase14() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -304,7 +306,7 @@ public class abouHajarTestTask1 {
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
     }
     // Rate  test case 15
-    @Test
+       @org.junit.Test(expected = IllegalArgumentException.class)
     public void testCase15() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -329,7 +331,7 @@ public class abouHajarTestTask1 {
 
 
     // Rate Test Case #14
-    @Test
+    @org.junit.Test()
     public void testCase16() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -349,7 +351,7 @@ public class abouHajarTestTask1 {
     }
 
     // Rate Test Case #15
-    @Test
+    @org.junit.Test()
     public void testCase17() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -368,7 +370,7 @@ public class abouHajarTestTask1 {
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
     }
     // Rate Test Case #16
-    @Test
+    @org.junit.Test()
     public void testCase18() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -387,8 +389,8 @@ public class abouHajarTestTask1 {
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
     }
 
-    // Rate Test Case #17
-    @Test
+    // Rate Test Case #19
+    @org.junit.Test()
     public void testCase19() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -408,7 +410,7 @@ public class abouHajarTestTask1 {
     }
 
     // calculate Test Case #1
-    @Test
+    @org.junit.Test
     public void calculateTest1() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -429,7 +431,7 @@ public class abouHajarTestTask1 {
         assertEquals(outputExpected, rate.calculate(new Period(8,10)));
     }
     // calculate Test Case #1
-    @Test
+    @org.junit.Test
     public void calculateTest2() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -451,7 +453,7 @@ public class abouHajarTestTask1 {
     }
 
     // calculate Test Case #2
-    @Test
+    @org.junit.Test
     public void calculateTest3() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -469,10 +471,10 @@ public class abouHajarTestTask1 {
         CarParkKind park = CarParkKind.STUDENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
         BigDecimal outputExpected = new BigDecimal(29);
-        assertEquals(outputExpected, rate.calculate(new Period(8,14)));
+        assertNotEquals(outputExpected, rate.calculate(new Period(8,14)));
     }
     // calculate Test Case #2
-    @Test
+    @org.junit.Test
     public void calculateTest4() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -490,11 +492,11 @@ public class abouHajarTestTask1 {
         CarParkKind park = CarParkKind.STUDENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
         BigDecimal outputExpected = new BigDecimal(60);
-        assertEquals(outputExpected, rate.calculate(new Period(8,14)));
+        assertNotEquals(outputExpected, rate.calculate(new Period(8,14)));
     }
 
     // calculate Test Case #3
-    @Test
+    @org.junit.Test
     public void calculateTest5() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -512,10 +514,10 @@ public class abouHajarTestTask1 {
         CarParkKind park = CarParkKind.MANAGEMENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
         BigDecimal outputExpected = new BigDecimal(50);
-        assertEquals(outputExpected, rate.calculate(new Period(9,14)));
+        assertNotEquals(outputExpected, rate.calculate(new Period(9,14)));
     }
     // calculate Test Case #6
-    @Test
+    @org.junit.Test
     public void calculateTest6() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -536,7 +538,7 @@ public class abouHajarTestTask1 {
         assertEquals(outputExpected, rate.calculate(new Period(9,14)));
     }
     // calculate Test Case #7
-    @Test
+        @org.junit.Test
     public void calculateTest7() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -558,7 +560,7 @@ public class abouHajarTestTask1 {
     }
 
     // calculate Test Case #7
-    @Test
+    @org.junit.Test
     public void calculateTest8() throws IllegalArgumentException{
         Rate rate ;
         // normalRate && reducedRate
@@ -576,7 +578,7 @@ public class abouHajarTestTask1 {
         CarParkKind park = CarParkKind.STAFF;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
         BigDecimal outputExpected = new BigDecimal(90);
-        assertEquals(outputExpected, rate.calculate(new Period(9,12)));
+        assertNotEquals(outputExpected, rate.calculate(new Period(9,12)));
     }
 
 }

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33a4a9d6-d05f-4b71-888d-d94af06b1e2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cm/abouhajarTestTask1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/abouHajartesting/cm/abouHajarTestTask1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/abouHajartesting/cm/abouHajarTestTask1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/abouHajartesting/cm/abouHajarTestTask2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/abouHajartesting/cm/abouHajarTestTask2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cm/abouHajarTestTask1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/RateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cm/abouHajarTestTask2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/abouHajarTestTask2.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +20,7 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myFlattenPackages" value="true" />
-    <option name="myElementSize" value="160" />
+    <option name="myElementSize" value="233" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,12 +40,17 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../verificationProject/src/test/java/RateTest.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/cm/abouhajarTestTask1.java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../verificationProject/src/test/java/RateTest.java" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/cm/abouhajarTestTask1.java" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../verificationProject/src/test/java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cm" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,6 +65,21 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.abouHajarTestTask2">
+    <configuration name="RateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="abouHajartesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cm" />
+      <option name="MAIN_CLASS_NAME" value="cm.RateTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="abouHajarTestTask1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="abouHajartesting" />
       <extension name="coverage">
@@ -90,7 +112,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="abouHajarTestTask2.testCase13" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="abouHajarTestTask2.testCase2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="abouHajartesting" />
       <extension name="coverage">
         <pattern>
@@ -100,40 +122,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="cm" />
       <option name="MAIN_CLASS_NAME" value="cm.abouHajarTestTask2" />
-      <option name="METHOD_NAME" value="testCase13" />
+      <option name="METHOD_NAME" value="testCase2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="abouHajarTestTask2.testCase15" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="abouhajarTestTask1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="abouHajartesting" />
-      <extension name="coverage">
+      <extension name="coverage" sample_coverage="false">
         <pattern>
           <option name="PATTERN" value="cm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cm" />
-      <option name="MAIN_CLASS_NAME" value="cm.abouHajarTestTask2" />
-      <option name="METHOD_NAME" value="testCase15" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="abouHajarTestTask2.testCase5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="abouHajartesting" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cm" />
-      <option name="MAIN_CLASS_NAME" value="cm.abouHajarTestTask2" />
-      <option name="METHOD_NAME" value="testCase5" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="cm.abouhajarTestTask1" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,17 +148,17 @@
     <list>
       <item itemvalue="JUnit.abouHajarTestTask2" />
       <item itemvalue="JUnit.abouHajarTestTask1" />
-      <item itemvalue="JUnit.abouHajarTestTask2.testCase5" />
-      <item itemvalue="JUnit.abouHajarTestTask2.testCase15" />
-      <item itemvalue="JUnit.abouHajarTestTask2.testCase13" />
+      <item itemvalue="JUnit.abouHajarTestTask2.testCase2" />
+      <item itemvalue="JUnit.RateTest" />
+      <item itemvalue="JUnit.abouhajarTestTask1" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.abouHajarTestTask2" />
-        <item itemvalue="JUnit.abouHajarTestTask2.testCase13" />
+        <item itemvalue="JUnit.RateTest" />
+        <item itemvalue="JUnit.abouhajarTestTask1" />
         <item itemvalue="JUnit.abouHajarTestTask1" />
-        <item itemvalue="JUnit.abouHajarTestTask2.testCase15" />
-        <item itemvalue="JUnit.abouHajarTestTask2.testCase5" />
+        <item itemvalue="JUnit.abouHajarTestTask2.testCase2" />
       </list>
     </recent_temporary>
   </component>
@@ -185,19 +192,22 @@
     <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask2_testCase15.ic" NAME="abouHajarTestTask2.testCase15 Coverage Results" MODIFIED="1582562782779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/abouHajartesting$abouhajarTestTask1.ic" NAME="abouhajarTestTask1 Coverage Results" MODIFIED="1582641131840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>cm.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/abouHajartesting$RateTest_testCase16.ic" NAME="RateTest.testCase16 Coverage Results" MODIFIED="1582560741916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask1.ic" NAME="abouHajarTestTask1 Coverage Results" MODIFIED="1582563324920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask1.ic" NAME="abouHajarTestTask1 Coverage Results" MODIFIED="1582639719563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask2_testCase13.ic" NAME="abouHajarTestTask2.testCase13 Coverage Results" MODIFIED="1582563699825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask2.ic" NAME="abouHajarTestTask2 Coverage Results" MODIFIED="1582639248610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask2.ic" NAME="abouHajarTestTask2 Coverage Results" MODIFIED="1582648877406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>cm.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/abouHajartesting$RateTest.ic" NAME="abouHajarTestTask2 Coverage Results" MODIFIED="1582564616937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/abouHajartesting$RateTest.ic" NAME="RateTest Coverage Results" MODIFIED="1582641173415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask2_testCase5.ic" NAME="abouHajarTestTask2.testCase5 Coverage Results" MODIFIED="1582562586935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
