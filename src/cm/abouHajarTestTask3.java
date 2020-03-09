@@ -432,8 +432,8 @@ import static org.junit.Assert.*;
             // Car Park
             CarParkKind park = CarParkKind.MANAGEMENT;
             rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-            BigDecimal outputExpected = new BigDecimal(55);
-            assertEquals(outputExpected, rate.calculate(new Period(9,14)));
+            BigDecimal outputExpected = new BigDecimal("15.00");
+            assertEquals(outputExpected, rate.calculate(new Period(9,10)));
         }
         // calculate Test Case #7
         @org.junit.Test
@@ -453,9 +453,10 @@ import static org.junit.Assert.*;
             // Car Park
             CarParkKind park = CarParkKind.STAFF;
             rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-            BigDecimal outputExpected = new BigDecimal(21);
+            BigDecimal outputExpected = new BigDecimal("16.00");
             assertEquals(outputExpected, rate.calculate(new Period(9,12)));
         }
+
 
         // calculate Test Case #8
         @org.junit.Test

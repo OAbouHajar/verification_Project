@@ -94,18 +94,24 @@ public class Rate {
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
+        int roundingValue = 2;
+        BigDecimal visitorFreeAmount = new BigDecimal("8");
+        BigDecimal visitorReductionAmount = new BigDecimal("0.50");
+        BigDecimal MANAGEMENTMinimumPayable = new BigDecimal("3");
+        BigDecimal studentNotReducedAmount = new BigDecimal("5.50");
+        BigDecimal studentReduction = new BigDecimal(0.25);
         BigDecimal cost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
         if (this.kind == CarParkKind.VISITOR) {
-            if (cost.compareTo(new BigDecimal("8")) == -1) return BigDecimal.ZERO;
-            else return ((cost.subtract(new BigDecimal("8"))).multiply(new BigDecimal("0.50")));
+            if (cost.compareTo(visitorFreeAmount) == -1) return BigDecimal.ZERO;
+            else return ((cost.subtract(visitorFreeAmount)).multiply(visitorReductionAmount)).setScale(roundingValue);
         } else if (this.kind == CarParkKind.MANAGEMENT) {
-            if (cost.compareTo(new BigDecimal("3")) == -1)  return new BigDecimal("3");
-            else return cost;
+            if (cost.compareTo(MANAGEMENTMinimumPayable) == -1)  return MANAGEMENTMinimumPayable;
+            else return cost.setScale(roundingValue);
         } else if (this.kind == CarParkKind.STUDENT) {
-            if (cost.compareTo(new BigDecimal("5.50")) <= 0) return cost;
-            else return ((cost.subtract(new BigDecimal(5.50))).multiply(new BigDecimal(0.25).add(new BigDecimal(5.50)))).setScale(2);
+            if (cost.compareTo(studentNotReducedAmount) <= 0) return cost.setScale(roundingValue);
+            else return ((cost.subtract(studentNotReducedAmount).multiply(studentReduction).add(studentNotReducedAmount))).setScale(roundingValue);
         } else {
-            if (cost.compareTo(new BigDecimal("16")) >= 0) return  new BigDecimal("16");
+            if (cost.compareTo(new BigDecimal("16")) >= 0) return  new BigDecimal("16").setScale(roundingValue);
             else return cost;
         }
     }

@@ -475,7 +475,7 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.MANAGEMENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal("15");
+        BigDecimal outputExpected = new BigDecimal("15.00");
         assertEquals(outputExpected, rate.calculate(new Period(9,10)));
     }
     // calculate Test Case #7
@@ -496,7 +496,7 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.STAFF;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(16);
+        BigDecimal outputExpected = new BigDecimal("16.00");
         assertEquals(outputExpected, rate.calculate(new Period(9,12)));
     }
 
@@ -582,7 +582,7 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.STUDENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(5.50);
+        BigDecimal outputExpected = new BigDecimal("5.50");
         assertEquals(outputExpected, rate.calculate(new Period(8,9)));
     }
 
@@ -604,7 +604,7 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.STUDENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(2.50);
+        BigDecimal outputExpected = new BigDecimal("2.50");
         assertEquals(outputExpected, rate.calculate(new Period(8,9)));
     }
     //student greater than 5.50
@@ -625,7 +625,7 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.STUDENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal("28.75");
+        BigDecimal outputExpected = new BigDecimal("6.75");
         assertEquals(outputExpected, rate.calculate(new Period(8,9)));
     }
 
