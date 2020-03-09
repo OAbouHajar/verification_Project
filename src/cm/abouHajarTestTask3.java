@@ -369,7 +369,7 @@ import static org.junit.Assert.*;
             // Car Park
             CarParkKind park = CarParkKind.VISITOR;
             rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-            BigDecimal outputExpected = new BigDecimal(20);
+            BigDecimal outputExpected = new BigDecimal("6.00");
             assertEquals(outputExpected, rate.calculate(new Period(8,10)));
         }
         // calculate Test Case #2

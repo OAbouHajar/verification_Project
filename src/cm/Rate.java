@@ -97,15 +97,12 @@ public class Rate {
         BigDecimal cost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
         if (this.kind == CarParkKind.VISITOR) {
             if (cost.compareTo(new BigDecimal("8")) == -1) return BigDecimal.ZERO;
-            return ((cost.subtract(new BigDecimal("8"))).multiply(new BigDecimal("0.50")));
+            else return ((cost.subtract(new BigDecimal("8"))).multiply(new BigDecimal("0.50")));
         } else if (this.kind == CarParkKind.MANAGEMENT) {
-            if (cost.compareTo(new BigDecimal("3")) == -1)
-                return new BigDecimal("3");
-            else
-                return cost;
+            if (cost.compareTo(new BigDecimal("3")) == -1)  return new BigDecimal("3");
+            else return cost;
         } else if (this.kind == CarParkKind.STUDENT) {
-            if (cost.compareTo(new BigDecimal("5.50")) == -1) return cost;
-            else if (cost.compareTo(new BigDecimal("5.50")) == 0) return cost;
+            if (cost.compareTo(new BigDecimal("5.50")) <= 0) return cost;
             else return ((cost.subtract(new BigDecimal(5.50))).multiply(new BigDecimal(0.25).add(new BigDecimal(5.50)))).setScale(2);
         } else {
             if (cost.compareTo(new BigDecimal("16")) >= 0) return  new BigDecimal("16");
