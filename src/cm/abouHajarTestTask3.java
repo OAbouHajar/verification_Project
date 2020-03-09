@@ -128,47 +128,6 @@ import static org.junit.Assert.*;
             rate = new Rate(park, normalRate, null, reducedPeriods, normalPeriods);
         }
 
-
-        // Rate Test Case #7
-        @org.junit.Test(expected = IllegalArgumentException.class)
-        public void testCase7() throws IllegalArgumentException {
-            Rate rate ;
-            // normalRate && reducedRate
-            BigDecimal normalRate = new BigDecimal("1");
-            BigDecimal reducedRate = new BigDecimal(1);
-            // reducedPeriods
-            ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-            Period reduceP = new Period(10,12);
-            reducedPeriods.add(reduceP);
-            // normalPeriods
-            ArrayList<Period> normalPeriods = new ArrayList<Period>();
-            Period np = new Period(7,10);
-            normalPeriods.add(np);
-            // Car Park
-            CarParkKind park = CarParkKind.MANAGEMENT;
-            rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        }
-
-        // Rate Test Case #8
-        @org.junit.Test(expected = IllegalArgumentException.class)
-        public void testCase8() throws IllegalArgumentException {
-            Rate rate ;
-            // normalRate && reducedRate
-            BigDecimal normalRate = new BigDecimal(1);
-            BigDecimal reducedRate = new BigDecimal("1");
-            // reducedPeriods
-            ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-            Period reduceP = new Period(10,12);
-            reducedPeriods.add(reduceP);
-            // normalPeriods
-            ArrayList<Period> normalPeriods = new ArrayList<Period>();
-            Period np = new Period(7,10);
-            normalPeriods.add(np);
-            // Car Park
-            CarParkKind park = CarParkKind.MANAGEMENT;
-            rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        }
-
         //Rate  Test Case #11
         @org.junit.Test(expected = IllegalArgumentException.class)
         public void testCase11() throws IllegalArgumentException {
