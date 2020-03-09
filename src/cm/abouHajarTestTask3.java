@@ -480,4 +480,27 @@ import static org.junit.Assert.*;
             assertNotEquals(outputExpected, rate.calculate(new Period(9,12)));
         }
 
-}
+
+        // calculate Test Case #9 less than 8
+        @org.junit.Test
+        public void calculateTest9() {
+            Rate rate ;
+            // normalRate && reducedRate
+            BigDecimal normalRate = new BigDecimal(5);
+            BigDecimal reducedRate = new BigDecimal(3);
+            // reducedPeriods
+            ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+            Period reduceP = new Period(16,18);
+            reducedPeriods.add(reduceP);
+            // normalPeriods
+            ArrayList<Period> normalPeriods = new ArrayList<Period>();
+            Period np = new Period(8,15);
+            normalPeriods.add(np);
+            // Car Park
+            CarParkKind park = CarParkKind.VISITOR;
+            rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+            BigDecimal outputExpected = new BigDecimal("0");
+            assertEquals(outputExpected, rate.calculate(new Period(9,10)));
+        }
+
+    }
