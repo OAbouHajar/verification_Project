@@ -130,7 +130,7 @@ public class abouHajarTestTask2 {
 
 
     // Rate Test Case #7
-    @org.junit.Test(expected = IllegalArgumentException.class)
+    @org.junit.Test()
     public void testCase7() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -150,7 +150,7 @@ public class abouHajarTestTask2 {
     }
 
     // Rate Test Case #8
-    @org.junit.Test(expected = IllegalArgumentException.class)
+    @org.junit.Test()
     public void testCase8() throws IllegalArgumentException {
         Rate rate ;
         // normalRate && reducedRate
@@ -410,8 +410,8 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.VISITOR;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(20);
-        assertEquals(outputExpected, rate.calculate(new Period(8,10)));
+        BigDecimal outputExpected = new BigDecimal("6.00");
+        assertEquals(outputExpected,rate.calculate(new Period(8,10)));
     }
     // calculate Test Case #2
     @org.junit.Test
@@ -435,48 +435,6 @@ public class abouHajarTestTask2 {
         assertNotEquals(outputExpected, rate.calculate(new Period(8,10)));
     }
 
-    // calculate Test Case #3
-    @org.junit.Test
-    public void calculateTest3() {
-        Rate rate ;
-        // normalRate && reducedRate
-        BigDecimal normalRate = new BigDecimal(5);
-        BigDecimal reducedRate = new BigDecimal(4);
-        // reducedPeriods
-        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-        Period reduceP = new Period(13,18);
-        reducedPeriods.add(reduceP);
-        // normalPeriods
-        ArrayList<Period> normalPeriods = new ArrayList<Period>();
-        Period np = new Period(7,12);
-        normalPeriods.add(np);
-        // Car Park
-        CarParkKind park = CarParkKind.STUDENT;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(29);
-        assertNotEquals(outputExpected, rate.calculate(new Period(8,14)));
-    }
-    // calculate Test Case #4
-    @org.junit.Test
-    public void calculateTest4() {
-        Rate rate ;
-        // normalRate && reducedRate
-        BigDecimal normalRate = new BigDecimal(5);
-        BigDecimal reducedRate = new BigDecimal(4);
-        // reducedPeriods
-        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
-        Period reduceP = new Period(13,18);
-        reducedPeriods.add(reduceP);
-        // normalPeriods
-        ArrayList<Period> normalPeriods = new ArrayList<Period>();
-        Period np = new Period(7,12);
-        normalPeriods.add(np);
-        // Car Park
-        CarParkKind park = CarParkKind.STUDENT;
-        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(60);
-        assertNotEquals(outputExpected, rate.calculate(new Period(8,14)));
-    }
 
     // calculate Test Case #5
     @org.junit.Test
@@ -517,8 +475,8 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.MANAGEMENT;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(55);
-        assertEquals(outputExpected, rate.calculate(new Period(9,14)));
+        BigDecimal outputExpected = new BigDecimal("15");
+        assertEquals(outputExpected, rate.calculate(new Period(9,10)));
     }
     // calculate Test Case #7
     @org.junit.Test
@@ -538,7 +496,7 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.STAFF;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(21);
+        BigDecimal outputExpected = new BigDecimal(16);
         assertEquals(outputExpected, rate.calculate(new Period(9,12)));
     }
 
@@ -560,8 +518,30 @@ public class abouHajarTestTask2 {
         // Car Park
         CarParkKind park = CarParkKind.STAFF;
         rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-        BigDecimal outputExpected = new BigDecimal(90);
-        assertNotEquals(outputExpected, rate.calculate(new Period(9,12)));
+        BigDecimal outputExpected = new BigDecimal(7);
+        assertEquals(outputExpected, rate.calculate(new Period(9,10)));
+    }
+
+    // calculate Test Case #9 less than 8
+    @org.junit.Test
+    public void calculateTest9() {
+        Rate rate ;
+        // normalRate && reducedRate
+        BigDecimal normalRate = new BigDecimal(5);
+        BigDecimal reducedRate = new BigDecimal(3);
+        // reducedPeriods
+        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+        Period reduceP = new Period(16,18);
+        reducedPeriods.add(reduceP);
+        // normalPeriods
+        ArrayList<Period> normalPeriods = new ArrayList<Period>();
+        Period np = new Period(8,15);
+        normalPeriods.add(np);
+        // Car Park
+        CarParkKind park = CarParkKind.VISITOR;
+        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        BigDecimal outputExpected = new BigDecimal("0");
+        assertEquals(outputExpected, rate.calculate(new Period(9,10)));
     }
 
 }

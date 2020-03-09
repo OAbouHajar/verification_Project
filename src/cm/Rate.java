@@ -25,7 +25,7 @@ public class Rate {
         if (normalRate.compareTo(BigDecimal.ZERO) < 0 || reducedRate.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("A rate cannot be negative");
         }
-        if (normalRate.compareTo(reducedRate) <= 0) {
+        if (normalRate.compareTo(reducedRate) < 0) {
             throw new IllegalArgumentException("The normal rate cannot be less or equal to the reduced rate");
         }
         if (!isValidPeriods(reducedPeriods) || !isValidPeriods(normalPeriods)) {
@@ -94,27 +94,23 @@ public class Rate {
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
-
-        BigDecimal cost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add( this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
-
-        if (this.kind == CarParkKind.VISITOR ){
-            return cost.subtract(BigDecimal.valueOf(8)).multiply(BigDecimal.valueOf(0.5));
-        }
-        else if (this.kind == CarParkKind.MANAGEMENT ){
-            if ( cost.compareTo(BigDecimal.valueOf(3)) < 3 ) return  new BigDecimal(3);
+        BigDecimal cost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
+        if (this.kind == CarParkKind.VISITOR) {
+            if (cost.compareTo(new BigDecimal("8")) == -1) return BigDecimal.ZERO;
+            return ((cost.subtract(new BigDecimal("8"))).multiply(new BigDecimal("0.50")));
+        } else if (this.kind == CarParkKind.MANAGEMENT) {
+            if (cost.compareTo(new BigDecimal("3")) == -1)
+                return new BigDecimal("3");
+            else
+                return cost;
+        } else if (this.kind == CarParkKind.STUDENT) {
+            if (cost.compareTo(new BigDecimal("5.50")) == -1) return cost;
+            else if (cost.compareTo(new BigDecimal("5.50")) == 0) return cost;
+            else return ((cost.subtract(new BigDecimal(5.50))).multiply(new BigDecimal(0.25).add(new BigDecimal(5.50)))).setScale(2);
+        } else {
+            if (cost.compareTo(new BigDecimal("16")) >= 0) return  new BigDecimal("16");
             else return cost;
-
         }
-        else if (this.kind == CarParkKind.STUDENT ){
-            if (cost.compareTo(new BigDecimal(5.50))  <= 0){
-                return  cost;
-            }
-            else return (cost.subtract(new BigDecimal(5.50)).multiply(new BigDecimal(0.25).add(new BigDecimal(5.50))));
-        }
-        else if (this.kind == CarParkKind.STAFF ){
-            return cost.compareTo(new BigDecimal(16)) >= 16 ? new BigDecimal(16) :  cost;
-        }
-        return (cost.subtract(BigDecimal.valueOf(8))).multiply(BigDecimal.valueOf(0.5));
     }
 
 }
