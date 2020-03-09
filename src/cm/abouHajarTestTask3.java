@@ -476,8 +476,8 @@ import static org.junit.Assert.*;
             // Car Park
             CarParkKind park = CarParkKind.STAFF;
             rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-            BigDecimal outputExpected = new BigDecimal(90);
-            assertNotEquals(outputExpected, rate.calculate(new Period(9,12)));
+            BigDecimal outputExpected = new BigDecimal("7.00");
+            assertEquals(outputExpected, rate.calculate(new Period(9,10)));
         }
 
 
