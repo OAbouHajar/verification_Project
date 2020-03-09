@@ -499,7 +499,7 @@ import static org.junit.Assert.*;
             // Car Park
             CarParkKind park = CarParkKind.VISITOR;
             rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-            BigDecimal outputExpected = new BigDecimal("0");
+            BigDecimal outputExpected = new BigDecimal("0.00");
             assertEquals(outputExpected, rate.calculate(new Period(9,10)));
         }
         // calculate manager with less than 3
@@ -520,7 +520,7 @@ import static org.junit.Assert.*;
             // Car Park
             CarParkKind park = CarParkKind.MANAGEMENT;
             rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
-            BigDecimal outputExpected = new BigDecimal("3");
+            BigDecimal outputExpected = new BigDecimal("3.00");
             assertEquals(outputExpected, rate.calculate(new Period(10,11)));
         }
         //student equal to 5.50

@@ -13,6 +13,13 @@ public class Rate {
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
+    private final KindPrice visitorRate = new VisitorRate();
+    private final KindPrice studentRate = new StudentRate();
+    private final KindPrice staffRate = new StaffRate();
+    private final KindPrice managementRate = new ManagementRate();
+    int roundingValue = 2;
+
+
 
     public Rate(CarParkKind kind, BigDecimal normalRate, BigDecimal reducedRate, ArrayList<Period> reducedPeriods
             , ArrayList<Period> normalPeriods) {
@@ -94,26 +101,12 @@ public class Rate {
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
-        int roundingValue = 2;
-        BigDecimal visitorFreeAmount = new BigDecimal("8");
-        BigDecimal visitorReductionAmount = new BigDecimal("0.50");
-        BigDecimal MANAGEMENTMinimumPayable = new BigDecimal("3");
-        BigDecimal studentNotReducedAmount = new BigDecimal("5.50");
-        BigDecimal studentReduction = new BigDecimal(0.25);
         BigDecimal cost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
-        if (this.kind == CarParkKind.VISITOR) {
-            if (cost.compareTo(visitorFreeAmount) == -1) return BigDecimal.ZERO;
-            else return ((cost.subtract(visitorFreeAmount)).multiply(visitorReductionAmount)).setScale(roundingValue);
-        } else if (this.kind == CarParkKind.MANAGEMENT) {
-            if (cost.compareTo(MANAGEMENTMinimumPayable) == -1)  return MANAGEMENTMinimumPayable;
-            else return cost.setScale(roundingValue);
-        } else if (this.kind == CarParkKind.STUDENT) {
-            if (cost.compareTo(studentNotReducedAmount) <= 0) return cost.setScale(roundingValue);
-            else return ((cost.subtract(studentNotReducedAmount).multiply(studentReduction).add(studentNotReducedAmount))).setScale(roundingValue);
-        } else {
-            if (cost.compareTo(new BigDecimal("16")) >= 0) return  new BigDecimal("16").setScale(roundingValue);
-            else return cost;
-        }
+        if(this.kind == CarParkKind.VISITOR) return visitorRate.calculate(cost).setScale(roundingValue);
+        if(this.kind == CarParkKind.STUDENT) return studentRate.calculate(cost).setScale(roundingValue);
+        if(this.kind == CarParkKind.MANAGEMENT) return managementRate.calculate(cost).setScale(roundingValue);
+        if(this.kind == CarParkKind.STAFF) return staffRate.calculate(cost).setScale(roundingValue);
+        else return BigDecimal.ZERO;
     }
 
 }
