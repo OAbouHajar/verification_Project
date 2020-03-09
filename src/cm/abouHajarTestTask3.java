@@ -502,5 +502,26 @@ import static org.junit.Assert.*;
             BigDecimal outputExpected = new BigDecimal("0");
             assertEquals(outputExpected, rate.calculate(new Period(9,10)));
         }
+        // calculate manager with less than 3
+        @org.junit.Test
+        public void calculateTest10() {
+            Rate rate ;
+            // normalRate && reducedRate
+            BigDecimal normalRate = new BigDecimal(14);
+            BigDecimal reducedRate = new BigDecimal(2);
+            // reducedPeriods
+            ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+            Period reduceP = new Period(10,15);
+            reducedPeriods.add(reduceP);
+            // normalPeriods
+            ArrayList<Period> normalPeriods = new ArrayList<Period>();
+            Period np = new Period(7,10);
+            normalPeriods.add(np);
+            // Car Park
+            CarParkKind park = CarParkKind.MANAGEMENT;
+            rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+            BigDecimal outputExpected = new BigDecimal("3");
+            assertEquals(outputExpected, rate.calculate(new Period(10,11)));
+        }
 
     }
