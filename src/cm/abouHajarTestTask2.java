@@ -543,5 +543,91 @@ public class abouHajarTestTask2 {
         BigDecimal outputExpected = new BigDecimal("0");
         assertEquals(outputExpected, rate.calculate(new Period(9,10)));
     }
+    // calculate manager with less than 3
+    @org.junit.Test
+    public void calculateTest10() {
+        Rate rate ;
+        // normalRate && reducedRate
+        BigDecimal normalRate = new BigDecimal(14);
+        BigDecimal reducedRate = new BigDecimal(2);
+        // reducedPeriods
+        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+        Period reduceP = new Period(10,15);
+        reducedPeriods.add(reduceP);
+        // normalPeriods
+        ArrayList<Period> normalPeriods = new ArrayList<Period>();
+        Period np = new Period(7,10);
+        normalPeriods.add(np);
+        // Car Park
+        CarParkKind park = CarParkKind.MANAGEMENT;
+        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        BigDecimal outputExpected = new BigDecimal("3");
+        assertEquals(outputExpected, rate.calculate(new Period(10,11)));
+    }
+    //student equal to 5.50
+    @org.junit.Test
+    public void calculateTest11() {
+        Rate rate ;
+        // normalRate && reducedRate
+        BigDecimal normalRate = new BigDecimal(5.50);
+        BigDecimal reducedRate = new BigDecimal(4);
+        // reducedPeriods
+        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+        Period reduceP = new Period(13,18);
+        reducedPeriods.add(reduceP);
+        // normalPeriods
+        ArrayList<Period> normalPeriods = new ArrayList<Period>();
+        Period np = new Period(7,12);
+        normalPeriods.add(np);
+        // Car Park
+        CarParkKind park = CarParkKind.STUDENT;
+        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        BigDecimal outputExpected = new BigDecimal(5.50);
+        assertEquals(outputExpected, rate.calculate(new Period(8,9)));
+    }
+
+    //student less than 5.50
+    @org.junit.Test
+    public void calculateTest12() {
+        Rate rate ;
+        // normalRate && reducedRate
+        BigDecimal normalRate = new BigDecimal(2.50);
+        BigDecimal reducedRate = new BigDecimal(1);
+        // reducedPeriods
+        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+        Period reduceP = new Period(13,18);
+        reducedPeriods.add(reduceP);
+        // normalPeriods
+        ArrayList<Period> normalPeriods = new ArrayList<Period>();
+        Period np = new Period(7,12);
+        normalPeriods.add(np);
+        // Car Park
+        CarParkKind park = CarParkKind.STUDENT;
+        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        BigDecimal outputExpected = new BigDecimal(2.50);
+        assertEquals(outputExpected, rate.calculate(new Period(8,9)));
+    }
+    //student greater than 5.50
+    @org.junit.Test
+    public void calculateTest13() {
+        Rate rate ;
+        // normalRate && reducedRate
+        BigDecimal normalRate = new BigDecimal(10.5);
+        BigDecimal reducedRate = new BigDecimal(1);
+        // reducedPeriods
+        ArrayList<Period> reducedPeriods = new ArrayList<Period>();
+        Period reduceP = new Period(13,18);
+        reducedPeriods.add(reduceP);
+        // normalPeriods
+        ArrayList<Period> normalPeriods = new ArrayList<Period>();
+        Period np = new Period(7,12);
+        normalPeriods.add(np);
+        // Car Park
+        CarParkKind park = CarParkKind.STUDENT;
+        rate = new Rate(park, normalRate, reducedRate, reducedPeriods, normalPeriods);
+        BigDecimal outputExpected = new BigDecimal("28.75");
+        assertEquals(outputExpected, rate.calculate(new Period(8,9)));
+    }
+
 
 }
