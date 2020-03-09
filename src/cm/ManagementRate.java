@@ -2,12 +2,12 @@ package cm;
 
 import java.math.BigDecimal;
 
-class ManagementRate implements KindPrice {
+class ManagementRate implements IKindPrice {
 
     @Override
     public BigDecimal calculate(BigDecimal cost) {
-        BigDecimal MANAGEMENTMinimumPayable = new BigDecimal("3");
-        if (cost.compareTo(MANAGEMENTMinimumPayable) == -1)  return MANAGEMENTMinimumPayable;
+        BigDecimal ManagmentMinimumPayable = new BigDecimal("3");
+        if (cost.compareTo(ManagmentMinimumPayable) == -1)  return ManagmentMinimumPayable;
         else return cost;
     }
 

@@ -13,10 +13,10 @@ public class Rate {
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
-    private final KindPrice visitorRate = new VisitorRate();
-    private final KindPrice studentRate = new StudentRate();
-    private final KindPrice staffRate = new StaffRate();
-    private final KindPrice managementRate = new ManagementRate();
+    private final IKindPrice visitorRate = new VisitorRate();
+    private final IKindPrice studentRate = new StudentRate();
+    private final IKindPrice staffRate = new StaffRate();
+    private final IKindPrice managementRate = new ManagementRate();
     int roundingValue = 2;
 
 

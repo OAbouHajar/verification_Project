@@ -2,6 +2,6 @@ package cm;
 
 import java.math.BigDecimal;
 
-interface KindPrice {
+interface IKindPrice {
     BigDecimal calculate(BigDecimal cost);
 }

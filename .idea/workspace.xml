@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="33a4a9d6-d05f-4b71-888d-d94af06b1e2c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/abouHajartesting/cm/abouHajarTestTask3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/abouHajartesting/cm/abouHajarTestTask3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/abouHajartesting/cm/ManagementRate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/abouHajartesting/cm/ManagementRate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cm/KindPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/IKindPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cm/ManagementRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/ManagementRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cm/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/Rate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cm/StaffRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/StaffRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cm/abouHajarTestTask3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/abouHajarTestTask3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cm/StudentRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/StudentRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cm/VisitorRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cm/VisitorRate.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +21,7 @@
     <option name="myAddOrReplace" value="1" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="482" />
+    <option name="myElementSize" value="434" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -202,7 +206,7 @@
     <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask2.ic" NAME="abouHajarTestTask2 Coverage Results" MODIFIED="1583769013661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask3.ic" NAME="abouHajarTestTask3 Coverage Results" MODIFIED="1583772956239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/abouHajartesting$abouHajarTestTask3.ic" NAME="abouHajarTestTask3 Coverage Results" MODIFIED="1583774706097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cm.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/abouHajartesting$RateTest.ic" NAME="RateTest Coverage Results" MODIFIED="1582649683627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">

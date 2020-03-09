@@ -2,7 +2,7 @@ package cm;
 
 import java.math.BigDecimal;
 
-class VisitorRate implements KindPrice {
+class VisitorRate implements IKindPrice {
 
     @Override
     public BigDecimal calculate(BigDecimal cost) {
