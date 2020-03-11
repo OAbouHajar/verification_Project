@@ -13,11 +13,6 @@ public class Rate {
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
-    private final IReductionRates visitorRate = new VisitorRate();
-    private final IReductionRates studentRate = new StudentRate();
-    private final IReductionRates staffRate = new StaffRate();
-    private final IReductionRates managementRate = new ManagementRate();
-    int roundingValue = 2;
 
 
 
@@ -101,12 +96,29 @@ public class Rate {
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
+        int roundingValue = 2;
+
         BigDecimal cost = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
-        if(this.kind == CarParkKind.VISITOR) return visitorRate.calculate(cost).setScale(roundingValue);
-        if(this.kind == CarParkKind.STUDENT) return studentRate.calculate(cost).setScale(roundingValue);
-        if(this.kind == CarParkKind.MANAGEMENT) return managementRate.calculate(cost).setScale(roundingValue);
-        if(this.kind == CarParkKind.STAFF) return staffRate.calculate(cost).setScale(roundingValue);
-        else return BigDecimal.ZERO;
+
+        switch (this.kind){
+            case VISITOR :
+                IReductionRates visitorRate = new VisitorRate();
+                cost =  visitorRate.calculate(cost).setScale(roundingValue);
+                break;
+            case STUDENT:
+                IReductionRates studentRate = new StudentRate();
+                cost = studentRate.calculate(cost).setScale(roundingValue);
+                break;
+            case STAFF:
+                IReductionRates staffRate = new StaffRate();
+                cost = staffRate.calculate(cost).setScale(roundingValue);
+                break;
+            case MANAGEMENT:
+                IReductionRates managementRate = new ManagementRate();
+                cost = managementRate.calculate(cost).setScale(roundingValue);
+                break;
+        }
+        return cost;
     }
 
 }
