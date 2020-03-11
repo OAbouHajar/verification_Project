@@ -13,6 +13,7 @@ public class Rate {
     private BigDecimal hourlyReducedRate;
     private ArrayList<Period> reduced = new ArrayList<>();
     private ArrayList<Period> normal = new ArrayList<>();
+    IReductionRates reduce;
 
 
 
@@ -102,20 +103,20 @@ public class Rate {
 
         switch (this.kind){
             case VISITOR :
-                IReductionRates visitorRate = new VisitorRate();
-                cost =  visitorRate.calculate(cost).setScale(roundingValue);
+                reduce = new VisitorRate();
+                cost =  reduce.calculate(cost).setScale(roundingValue);
                 break;
             case STUDENT:
-                IReductionRates studentRate = new StudentRate();
-                cost = studentRate.calculate(cost).setScale(roundingValue);
+                reduce = new StudentRate();
+                cost = reduce.calculate(cost).setScale(roundingValue);
                 break;
             case STAFF:
-                IReductionRates staffRate = new StaffRate();
-                cost = staffRate.calculate(cost).setScale(roundingValue);
+                reduce = new StaffRate();
+                cost = reduce.calculate(cost).setScale(roundingValue);
                 break;
             case MANAGEMENT:
-                IReductionRates managementRate = new ManagementRate();
-                cost = managementRate.calculate(cost).setScale(roundingValue);
+                reduce = new ManagementRate();
+                cost = reduce.calculate(cost).setScale(roundingValue);
                 break;
         }
         return cost;
