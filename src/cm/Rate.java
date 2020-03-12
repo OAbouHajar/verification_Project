@@ -104,19 +104,19 @@ public class Rate {
         switch (this.kind){
             case VISITOR :
                 reduce = new VisitorRate();
-                cost =  reduce.calculate(cost).setScale(roundingValue);
+                cost =  reduce.reduction(cost).setScale(roundingValue);
                 break;
             case STUDENT:
                 reduce = new StudentRate();
-                cost = reduce.calculate(cost).setScale(roundingValue);
+                cost = reduce.reduction(cost).setScale(roundingValue);
                 break;
             case STAFF:
                 reduce = new StaffRate();
-                cost = reduce.calculate(cost).setScale(roundingValue);
+                cost = reduce.reduction(cost).setScale(roundingValue);
                 break;
             case MANAGEMENT:
                 reduce = new ManagementRate();
-                cost = reduce.calculate(cost).setScale(roundingValue);
+                cost = reduce.reduction(cost).setScale(roundingValue);
                 break;
         }
         return cost;
